@@ -5,4 +5,7 @@
 unsigned long long powMod(unsigned long long a, unsigned long long x, 
                           unsigned long long p);
 
-bool isPrime(int p);
+int isPrime(int p);
+
+
+int ExtendedEuclied(int a, int b);

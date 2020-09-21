@@ -6,6 +6,10 @@
 
 int main(int argc, char *argv[])
 {
-  printf("%lld\n", powMod(atoll(argv[1]), atoll(argv[2]), atoll(argv[3])));
+  printf("\tTest powMod a = 5 x = 7 p = 7\n");
+  printf("%lld\n", powMod(5, 7, 7));
+  printf("\tTest ExtendedEuclied a = 15  b = 60\n");
+  ExtendedEuclied(15, 60);
+
   return 0;
 }
