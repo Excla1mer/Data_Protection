@@ -5,17 +5,17 @@
  * Если число простое вернет значение true, если нет, то false 
  */
 
-bool isPrime(int p)
+int isPrime(long long p)
 {
-  int b=(int)pow(p,0.5);
+  long long b = pow(p, 0.5);
 
   if (p<=1) 
-    return false;
+    return 0;
    
-  for(int i=2;i<=b;++i)
+  for(long long i=2;i<=b;++i)
   {
-    if ((p%i)==0) return false;        
+    if ((p%i)==0) return 0;        
   }
 
-  return true;     
+  return 1;     
 }
