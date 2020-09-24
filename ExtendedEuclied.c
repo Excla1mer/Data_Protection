@@ -1,14 +1,15 @@
 #include "headers.h"
 
 
-int ExtendedEuclied(int a, int b){
-  int i;
+unsigned long long ExtendedEuclied(unsigned long long a, unsigned long long b)
+{
+  unsigned long long i;
   if(a < b){
     i = a;
     a = b;
     b = i;
   }
-  int q, u[3], v[3], t[3];
+  unsigned long long q, u[3], v[3], t[3];
   u[0] = a;
   u[1] = 1;
   u[2] = 0;
@@ -25,6 +26,5 @@ int ExtendedEuclied(int a, int b){
       v[i] = t[i];
     }
   }
-  for(i = 0; i < 3; i++)
-    printf("%d ", u[i]);
+  return u[0];
 }

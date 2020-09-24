@@ -8,8 +8,11 @@ unsigned long long powMod(unsigned long long a, unsigned long long x,
 int isPrime(long long p);
 
 
-int ExtendedEuclied(int a, int b);
+unsigned long long ExtendedEuclied(unsigned long long a, unsigned long long b);
 
 
 unsigned long long DiffiHellman(unsigned long long a, unsigned long long b,
 								unsigned long long p);
+
+unsigned long long BabyGiant(unsigned long long a, unsigned long long y, 
+	unsigned long long p);

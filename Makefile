@@ -5,7 +5,7 @@
 
 # *.o: *.c
 # 	gcc *.c -c -g -lm
-all: main.o powMod.o ExtendedEuclied.o isPrime.o DiffiHellman.o
+all: main.o powMod.o ExtendedEuclied.o isPrime.o DiffiHellman.o BabyGiant.o
 		gcc *.o -o result -lm
 		rm *.o
 main.o: main.c
@@ -21,6 +21,9 @@ isPrime.o: isPrime.c
 
 DiffiHellman.o: DiffiHellman.c
 		gcc DiffiHellman.c -c -g
+
+BabyGiant.o: BabyGiant.c
+		gcc BabyGiant.c -c -g -lm
 
 clean:
 		rm *.o result
