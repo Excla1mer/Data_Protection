@@ -20,8 +20,10 @@ unsigned long long BabyGiant(unsigned long long a, unsigned long long y,
     //x
     for(i = 1; i <= k; i++)
         for(j = 0; j < m; j++)
-            if(giant[i] == baby[j])
+            if(giant[i] == baby[j]){
                 x = i * m - j;
+                break;
+            }
     
     free(baby);
     free(giant);
