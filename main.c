@@ -64,8 +64,8 @@ int main(int argc, char *argv[])
   printf("\t#########################\n");
   printf("\t# \tBabyGiant\t#\n");
   a = 3;
-  y = 7;
-  p = 1;
+  y = 1;
+  p = 7;
   printf("\t# a = %10lld\t#\n \t# y = %10lld\t#\n \t# p = %10lld\t#\n", a, y, p);
   printf("\t#########################\n");
   printf("\t# Result = %10lld\t#\n", BabyGiant(a, x, p));
