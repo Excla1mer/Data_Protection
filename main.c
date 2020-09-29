@@ -28,9 +28,25 @@ int main(int argc, char *argv[])
   DiffiHellman();
   printf("\t#########################\n");
   printf("\t# \tBabyGiant\t#\n");
-  a = 3;
-  y = 1;
-  p = 7;
+  
+  while (1)
+  {
+    a = random();
+    y = random();
+    p = random();
+    if ( y < p )
+      break;
+  }
+{
+  //a = 3 y = 1 p = 7 {x == 6}
+  //a = 88 y = 47 p = 107 {x == 62}
+  //a = 2 y = 45 p = 61 {x == 34}
+  /*
+  a = 88;
+  y = 47;
+  p = 107;
+  */
+}
   printf("\t# a = %10lld\t#\n \t# y = %10lld\t#\n \t# p = %10lld\t#\n", a, y, p);
   printf("\t#########################\n");
   printf("\t# Result = %10lld\t#\n", BabyGiant(a, y, p));

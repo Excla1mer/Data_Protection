@@ -30,8 +30,3 @@ unsigned long long BabyGiant(unsigned long long a, unsigned long long y,
     
     return x;
 }
-
-/*
-    a = 3 y = 1 p = 7 {x == 6}
-
-*/
