@@ -1,5 +1,5 @@
 #include "headers.h"
-
+/* Test commit */
 
 int main(int argc, char *argv[])
 {
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
   p = 7;
   printf("\t# a = %10lld\t#\n \t# y = %10lld\t#\n \t# p = %10lld\t#\n", a, y, p);
   printf("\t#########################\n");
-  printf("\t# Result = %10lld\t#\n", BabyGiant(a, x, p));
+  printf("\t# Result = %10lld\t#\n", BabyGiant(a, y, p));
   printf("\t#########################\n");
   return 0;
 }
