@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
+#include <string.h>
+#include <stdint.h>
 
 unsigned long long powMod(unsigned long long a, unsigned long long x, 
                           unsigned long long p);

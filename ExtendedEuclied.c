@@ -9,7 +9,7 @@ unsigned long long ExtendedEuclied(unsigned long long a, unsigned long long b)
     a = b;
     b = i;
   }
-  unsigned long long q, u[3], v[3], t[3];
+  long long q, u[3], v[3], t[3];
   u[0] = a;
   u[1] = 1;
   u[2] = 0;
