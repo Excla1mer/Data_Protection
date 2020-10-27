@@ -1,12 +1,15 @@
-#include "headers.h"
+#include "../libs/headers.h"
 /* Test commit */
 
 int main(int argc, char *argv[])
 {
   srand(time(NULL));
-  a = random();
-  x = random();
-  p = random();
+  // a = random();
+  // x = random();
+  // p = random();
+  a = 14;
+  x = 5;
+  p = 23;
   printf("\t#########################\n");
   printf("\t#\tTest powMod\t#\n");
   printf("\t# a = %10lld\t#\n \t# x = %10lld\t#\n \t# p = %10lld\t#\n", a, x, p);

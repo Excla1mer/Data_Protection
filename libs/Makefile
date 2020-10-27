@@ -1,22 +1,8 @@
 
-# all: *.o
-# 	gcc *.o -o result
-# 	rm *.o
 
-# *.o: *.c
-# 	gcc *.c -c -g -lm
-all: main.o
-
-lib: powMod.o ExtendedEuclied.o isPrime.o DiffiHellman.o BabyGiant.o
-		
+lib: powMod.o ExtendedEuclied.o isPrime.o DiffiHellman.o BabyGiant.o Shamir.o
 		ar rc libmy_lib.a *.o
 		rm *.o
-		mkdir libs
-		mv libmy_lib.a ./libs/
-
-
-main.o: main.c
-		gcc main.c -o result -L./libs/ -lmy_lib -lm
 
 powMod.o: powMod.c
 		gcc powMod.c -c -g
@@ -33,6 +19,8 @@ DiffiHellman.o: DiffiHellman.c
 BabyGiant.o: BabyGiant.c
 		gcc BabyGiant.c -c -g -lm
 
-clean:
-		rm result
-		rm -rf ./libs
+
+Shamir.o: Shamir.c
+		gcc Shamir.c -c -g -lm
+
+	
