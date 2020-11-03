@@ -4,6 +4,9 @@
 #include <time.h>
 #include <string.h>
 #include <stdint.h>
+#include <locale.h>
+
+#define MAX 500
 
 unsigned long long powMod(unsigned long long a, unsigned long long x, 
                           unsigned long long p);
@@ -29,5 +32,11 @@ int Shamir(
 				uint64_t d,
 				char * file_name);
 
+
 FILE * file;
 FILE * file1;
+
+
+int vernam(char * sourceFile);
+
+int rsa(char * sourceFile);

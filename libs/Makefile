@@ -1,6 +1,6 @@
 
 
-lib: powMod.o ExtendedEuclied.o isPrime.o DiffiHellman.o BabyGiant.o Shamir.o
+lib: powMod.o ExtendedEuclied.o isPrime.o DiffiHellman.o BabyGiant.o Shamir.o vernam.o rsa.o
 		ar rc libmy_lib.a *.o
 		rm *.o
 
@@ -23,4 +23,8 @@ BabyGiant.o: BabyGiant.c
 Shamir.o: Shamir.c
 		gcc Shamir.c -c -g -lm
 
-	
+vernam.o: vernam.c
+		gcc vernam.c -c -g -lm
+
+rsa.o: rsa.c
+		gcc rsa.c -c -g -lm
