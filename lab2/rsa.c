@@ -3,6 +3,6 @@
 int main(){
 	srand(time(NULL));
 	setlocale(LC_ALL, "Rus");
-	rsa("test.png");
+	rsa("1");
 	return 0;
 }

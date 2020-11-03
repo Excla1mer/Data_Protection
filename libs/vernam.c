@@ -23,7 +23,7 @@ int vernam(char * sourceFile){
 
 	fclose(file);
 
-	if ((file1 = fopen("codedFile", "wb")) == NULL)
+	if ((file1 = fopen("codedFile_Vernam", "wb")) == NULL)
 		return -2;
 	fwrite(buf, sizeof(char), lSize, file1);
 	fclose(file1);
@@ -32,8 +32,16 @@ int vernam(char * sourceFile){
 		buf[i] ^= key[i];
 	}
 	
-	if ((file = fopen("decodedFile", "wb")) == NULL)
+	if ((file = fopen("decodedFile_Vernam", "wb")) == NULL)
 		return -3;
+
+	if ((file2 = fopen("Key_Vernam", "wb")) == NULL)
+		return -2;
+
+	for(i = 0; i < lSize; i++)
+	{
+		fwrite(&key[i], sizeof(char), lSize, file2);
+	}
 
 	fwrite(buf, sizeof(char), lSize, file);
 

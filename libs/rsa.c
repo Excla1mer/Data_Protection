@@ -71,7 +71,7 @@ int rsa(char * sourceFile){
 
 	fclose(file);
 
-	if ((file1 = fopen("codedFile", "wb")) == NULL)
+	if ((file1 = fopen("codedFile_RSA", "wb")) == NULL)
 		return -2;
 	fwrite(buf2, sizeof(uint8_t), lSize, file1);
 	fclose(file1);
@@ -81,7 +81,7 @@ int rsa(char * sourceFile){
 		buf2[i] = powMod(buf2[i], d, n);
 	}
 
-	if ((file = fopen("decodedFile", "wb")) == NULL)
+	if ((file = fopen("decodedFile_RSA", "wb")) == NULL)
 		return -3;
 	fwrite(buf, sizeof(uint8_t), lSize, file);
 	free(buf);

@@ -70,7 +70,6 @@ int Shamir(
 	{
 		fread(&symb_c, sizeof(uint8_t), 1, file);
 		
-		printf("symb = %d \n", symb_c);
 		if(feof(file))
 			break;
 		
@@ -102,9 +101,8 @@ int Shamir(
 	uint32_t x;
 	size_t size_f;
 
-	strcat(file_name1, "_decrypted_Shamir");
-	file1 = fopen(file_name1, "wb");
-
+	file1 = fopen("decrypted_Shamir", "wb");
+	file2 = fopen("encrypted_Shamir", "wb");
 	fseek(file, 0, SEEK_END);
 	long lsize = ftell(file);
 	rewind(file);
@@ -150,6 +148,11 @@ int Shamir(
 				for(int j = 0; j < lsize; j++)
 				{
 					array[j] = array1[j];
+				}
+
+				for(int j = 0; j < lsize; j++)
+				{
+					fwrite(&array[j], sizeof(uint8_t), 1, file2);
 				}
 				break;
 
