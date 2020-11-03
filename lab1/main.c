@@ -7,9 +7,9 @@ int main(int argc, char *argv[])
   // a = random();
   // x = random();
   // p = random();
-  a = 14;
-  x = 5;
-  p = 23;
+  a = 101;
+  x = 67;
+  p = 443;
   printf("\t#########################\n");
   printf("\t#\tTest powMod\t#\n");
   printf("\t# a = %10lld\t#\n \t# x = %10lld\t#\n \t# p = %10lld\t#\n", a, x, p);

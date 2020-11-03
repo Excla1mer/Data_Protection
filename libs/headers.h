@@ -24,7 +24,10 @@ unsigned long long BabyGiant(unsigned long long a, unsigned long long y,
 
 unsigned long long a,x,y,p,b,g,q,Xa,Xb,Ya,Yb,Zab,Zba; // Lab1
 
-uint64_t Ca, Cb, Da, Db; // Lab2
+uint64_t Ca, Cb, Da, Db, r, e, k; // Lab2
+
+
+
 
 int Shamir(
 				uint64_t p,
@@ -32,11 +35,13 @@ int Shamir(
 				uint64_t d,
 				char * file_name);
 
-
-FILE * file;
-FILE * file1;
-
-
 int vernam(char * sourceFile);
 
 int rsa(char * sourceFile);
+
+int ElGamal(char * file_name, uint64_t C, uint64_t D);
+
+
+FILE * file;
+FILE * file1;
+FILE * file2;
