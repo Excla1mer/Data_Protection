@@ -27,8 +27,6 @@ unsigned long long a,x,y,p,b,g,q,Xa,Xb,Ya,Yb,Zab,Zba; // Lab1
 uint64_t Ca, Cb, Da, Db, r, e, k; // Lab2
 
 
-
-
 int Shamir(
 				uint64_t p,
 				uint64_t c,
@@ -39,9 +37,11 @@ int vernam(char * sourceFile);
 
 int rsa(char * sourceFile);
 
-int ElGamal(char * file_name, uint64_t C, uint64_t D);
+int ElGamal_sign(uint8_t hash_key[16], uint64_t p, uint64_t x, uint64_t g);
 
 
 FILE * file;
 FILE * file1;
 FILE * file2;
+
+void md5(const uint8_t *initial_msg, size_t initial_len, uint8_t *digest);
