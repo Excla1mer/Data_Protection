@@ -1,0 +1,30 @@
+#include "../libs/headers.h"
+
+int main(int argc, char **argv){
+
+  srand(time(NULL));
+
+  char *file_name = argv[1];
+
+  if (file_name == NULL){
+  perror("Enter file_name");
+  return -1;
+  }
+
+  int i = gost(11, file_name);
+	switch(i){
+		case 0: 
+			printf("success\n");
+			break;
+		case -1:
+			printf("file reading error\n");
+			break;
+		case -2:
+		    printf("gost sign undone\n");
+		    break;
+		default:
+			printf("unknown error\n");
+	}
+
+  return 0;
+}

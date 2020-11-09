@@ -39,7 +39,7 @@ int prime(int a, int b){
 }
 
 int rsa(char * sourceFile){
-	int e, d, i;
+	int c, d, i;
 	int p = prime(1, MAX);
 	int q = prime(1, MAX);
 	int n = p * q;
@@ -59,14 +59,14 @@ int rsa(char * sourceFile){
 	for(i = 0; i < lSize; i++)
 		buf2[i] = buf[i];
 	while(1){
-		e = prime(1, fi);
-		if((e < fi) && (fi % e != 0))
+		d = prime(1, fi);
+		if((d < fi) && (fi % d != 0))
 			break;
 	}
-	d = euclied(fi, e);
+	c = euclied(fi, d);
 	//encoding
 	for(i = 0; i < lSize; i++){
-		buf2[i] = powMod(buf2[i], e, n);
+		buf2[i] = powMod(buf2[i], d, n);
 	}
 
 	fclose(file);
@@ -78,7 +78,7 @@ int rsa(char * sourceFile){
 
 	//decoding
 	for(i = 0; i < lSize; i++){
-		buf2[i] = powMod(buf2[i], d, n);
+		buf2[i] = powMod(buf2[i], c, n);
 	}
 
 	if ((file = fopen("decodedFile_RSA", "wb")) == NULL)

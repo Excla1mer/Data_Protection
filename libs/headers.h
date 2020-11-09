@@ -39,6 +39,9 @@ int rsa(char * sourceFile);
 
 int ElGamal_sign(uint8_t hash_key[16], uint64_t p, uint64_t x, uint64_t g);
 
+int rsa_sign(char * sourceFile);
+
+int gost(uint64_t q, char * sourceFile);
 
 FILE * file;
 FILE * file1;

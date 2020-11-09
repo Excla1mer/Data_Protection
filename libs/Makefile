@@ -1,5 +1,5 @@
 
-lib: powMod.o ExtendedEuclied.o isPrime.o DiffiHellman.o BabyGiant.o Shamir.o vernam.o rsa.o ElGamal_sign.o md5.o
+lib: powMod.o ExtendedEuclied.o isPrime.o DiffiHellman.o BabyGiant.o Shamir.o vernam.o rsa.o ElGamal_sign.o md5.o rsa_sign.o gost.o
 		ar rc libmy_lib.a *.o
 
 powMod.o: powMod.c
@@ -31,6 +31,12 @@ ElGamal_sign.o: ElGamal_sign.c
 
 md5.o: md5.c
 		gcc md5.c -c -g -lm
+
+rsa_sign.o: rsa_sign.c
+		gcc rsa_sign.c -c -g -lm
+
+gost.o: gost.c
+		gcc gost.c -c -g -lm
 
 clean: 
 	rm *.o
