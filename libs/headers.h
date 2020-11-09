@@ -6,6 +6,7 @@
 #include <stdint.h>
 #include <locale.h>
 
+
 #define MAX 500
 
 unsigned long long powMod(unsigned long long a, unsigned long long x, 
@@ -37,7 +38,7 @@ int vernam(char * sourceFile);
 
 int rsa(char * sourceFile);
 
-int ElGamal_sign(uint8_t hash_key[16], uint64_t p, uint64_t x, uint64_t g);
+int ElGamal_sign(uint8_t hash_key[16], uint64_t p, uint64_t x, uint64_t g, uint64_t s[16]);
 
 
 FILE * file;

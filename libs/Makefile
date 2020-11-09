@@ -27,7 +27,7 @@ rsa.o: rsa.c
 		gcc rsa.c -c -g -lm
 
 ElGamal_sign.o: ElGamal_sign.c
-		gcc ElGamal_sign.c -c -g -lm
+		gcc -fPIC -I/usr/include/python2.7 -lpython2.7 ElGamal_sign.c -c -g -lm 
 
 md5.o: md5.c
 		gcc md5.c -c -g -lm
