@@ -1,6 +1,5 @@
 #include "headers.h"
-#include "python2.7/Python.h"
-//#include <Python.h>
+
 int euclied(int a, int b)
 {
   int i;
