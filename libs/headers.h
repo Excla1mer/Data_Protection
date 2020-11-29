@@ -5,7 +5,7 @@
 #include <string.h>
 #include <stdint.h>
 #include <locale.h>
-
+#include <unistd.h>
 
 #define MAX 500
 

@@ -8,3 +8,6 @@ rsa.o: rsa.c
 
 gost.o: gost.c
 		gcc gost.c -o gost_result -L../libs/ -lmy_lib -lm -g
+
+clean: 
+		rm -rf *result

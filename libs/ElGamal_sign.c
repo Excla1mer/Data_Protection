@@ -1,6 +1,5 @@
 #include "headers.h"
-#include "python2.7/Python.h"
-//#include <Python.h>
+
 int euclied(int a, int b)
 {
   int i;
@@ -39,7 +38,7 @@ uint64_t neg_mod(long int a, uint64_t p)
 	}
 	else
 	{
-		int i = 1;
+		uint64_t i = 1;
 		while(dev < tmp)
 		{
 			dev = i * p;
@@ -49,32 +48,45 @@ uint64_t neg_mod(long int a, uint64_t p)
 	}
 }
 
+int mod_test(int n, int d)
+{
+    int result = n % d;
+    if (result * d < 0)
+        result += d;
+    return result;
+}
+
 int ElGamal_sign(uint8_t hash_key[16], uint64_t p, uint64_t x, uint64_t g, uint64_t s[16])
 {
-	uint64_t u, k1;
-
-	k = random() % p - 1; // q
-	k = euclied(k, p - 1) ;
+	uint64_t k1;
+	long int u;
+	
+	while (!isPrime(k))
+	{
+		k = random() % p - 1; 
+	}
 
 	
 	r = powMod(g, k, p);
-	printf("r = %ld \n", k);
+	
 	k1 = euclied(k, (p-1));
 	char *str = (char *)malloc(sizeof(char) * 255);
+	long int l = 0;
 	for(int i = 0; i < 16; i++)
 	{
-		if ((int)(hash_key[i] - r * x) < 0)
+		l = (long int)(hash_key[i] - r * x);
+		//printf("l = %ld ", l);
+		if (l < 0)
 		{
-			long int l = (int)(hash_key[i] - r * x);
 			u = neg_mod(l, p-1);
+			printf("u = %ld\n", u);
 		}
 		else
 		{
-			u = (int)(hash_key[i] - r * x) % (p - 1);
+			u = powMod(l, 1, (p - 1));
 		}
-		
 		s[i] = powMod((k1*u), 1, p - 1);
 	}
-
+	printf("r = %ld\n", r);
 	return 0;
 }

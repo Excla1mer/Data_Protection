@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 
 	while(1)
 	{
-		q = random() % 90000; // q 
+		q = random() % 9999; // q 
 		if(isPrime(q))
 		{
 			p = 2 * q + 1;
@@ -45,9 +45,10 @@ int main(int argc, char **argv)
 		if(powMod(g, q, p) != 1 )
 			break;
 	}
-	x = rand() % p; // Закрытый ключ
+	x = random() % p; // Закрытый ключ
 	y = powMod(g, x, p); // Открытый ключ
-	printf("p = %lld g = %lld \n", p, g);
+	printf("p = %lld q = %lld g = %lld\n", p, q, g);
+	printf("x = %lld y = %lld \n", x, y);
 	md5((uint8_t *)tmp, lsize, hash_key);
 
 	uint64_t s[16];
