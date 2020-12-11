@@ -6,6 +6,13 @@
 #include <stdint.h>
 #include <locale.h>
 #include <unistd.h>
+#include <sys/types.h>         
+#include <sys/socket.h>
+#include <arpa/inet.h>
+
+
+#define COUNT_OF_ROUNDS 20
+#define LOGS
 
 #define MAX 500
 
