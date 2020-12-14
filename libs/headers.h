@@ -11,8 +11,9 @@
 #include <arpa/inet.h>
 
 
-#define COUNT_OF_ROUNDS 20
+#define COUNT_OF_ROUNDS 40
 #define LOGS
+#define PORT 1234
 
 #define MAX 500
 
