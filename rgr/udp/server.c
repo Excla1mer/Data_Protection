@@ -51,7 +51,7 @@ int main() {
 	while(1) 
 	{	
 #if defined(LOGS)
-		printf("Сервер ждет клиентов...\n");
+		printf("Сервер ждет клиентов...\n\n");
 #endif
 		//ждем подключение клиента
 		if(recvfrom(fd, &buffer, sizeof(long long int), MSG_WAITALL, (struct sockaddr*)&client, &len) == -1) 
@@ -60,7 +60,7 @@ int main() {
 			exit(1);
 		}
 #if defined(LOGS)
-		printf("Клиент %lld подключен\n", buffer);
+		printf("Клиент %lld подключен\n\n", buffer);
 #endif
 		buffer = n;
 
@@ -81,11 +81,12 @@ int main() {
 		}
 		v = buffer;
 #if defined(LOGS)
-		printf("Получил v = %lld\n", buffer);
+		printf("Получил v = %lld\n\n", buffer);
 #endif
 		//цикл по раундам аунтификации
 		for (int i = 0; i < COUNT_OF_ROUNDS; i++)
 		{
+			printf("Раунд %d\n", i);
 			//получаем от клиента х
 			if(recvfrom(fd, &buffer, sizeof(long long int), MSG_WAITALL, (struct sockaddr*)&client, &len) == -1) 
 			{
@@ -135,6 +136,7 @@ int main() {
 				break;
 			}
 		}
+		printf("Аунтификация успешно пройдена\n\n");
 
 	}
 	return 0;

@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
     }
 #if defined(LOGS)
     printf("Связь с сервером установлена\n");
-    printf("Ожидание сообщений от сервера...\n");
+    printf("Ожидание сообщений от сервера...\n\n");
 #endif
     //получаем от сервера n
 	if(recvfrom(fd, &buffer, sizeof(long long int), MSG_WAITALL, (struct sockaddr*)&server, &len) == -1) 
@@ -63,11 +63,12 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
 #if defined(LOGS)
-    printf("Отправил v = %lld\n", buffer);
+    printf("Отправил v = %lld\n\n", buffer);
 #endif
     //цикл по раундам аунтификации
     for (int i = 0; i < COUNT_OF_ROUNDS; i++)
     {
+        printf("Раунд %d\n", i);
         //генерируем r [1, n - 1]
         r = rand() % (n - 1) + 1;
         //вычисляем х = r^2 mod n
@@ -103,7 +104,7 @@ int main(int argc, char *argv[]) {
             exit(1);
         }
 #if defined(LOGS)
-        printf("Отправил y = %lld\n", buffer);
+        printf("Отправил y = %lld\n\n", buffer);
         printf("\n");
 #endif
 
